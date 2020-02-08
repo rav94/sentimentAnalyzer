@@ -19,3 +19,5 @@ Deployment Steps
     source env/bin/activate
 
     sudo python main.py
+
+Inspired By - https://towardsdatascience.com/analyzing-historical-speeches-using-amazon-transcribe-and-comprehend-636f39a0726a

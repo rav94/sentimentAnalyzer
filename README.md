@@ -9,8 +9,10 @@ Deployment Steps
 
 2 - Install FLask/ Boto3
     sudo env/bin/pip3.7 install flask
+    
     sudo env/bin/pip3.7 install boto3
 
 3 - Run app
     source env/bin/activate
+
     sudo python main.py

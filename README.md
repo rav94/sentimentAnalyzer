@@ -20,6 +20,10 @@ Audio Sentiment Analyzer with AWS Transcribe/ Comprehend - Exposed as a Flask RE
 
     sudo python main.py
 
+4 - Docker-based deployment
+
+    Pending...
+
 ## Inspired By
 
 [Article](https://towardsdatascience.com/analyzing-historical-speeches-using-amazon-transcribe-and-comprehend-636f39a0726a)

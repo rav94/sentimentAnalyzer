@@ -1,5 +1,7 @@
 # Audio Sentiment Analyzer
 
+[![work](https://img.shields.io/badge/work-In_Progress-brightgreen.svg?style=flat-square)]() 
+
 Audio Sentiment Analyzer with AWS Transcribe/ Comprehend - Exposed as a Flask REST API. Exposed API will take an audio file path from S3 as input and output the sentiment of the audio
 
 ## Installation

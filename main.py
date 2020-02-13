@@ -7,11 +7,13 @@ app = Flask(__name__)
 
 env_props = PropertyReader().read_properties_file()
 
-@app.route(env_props.get('api_context'))
+api_context = env_props.get('api_context')
+
+@app.route(api_context)
 def home():
     return make_response(jsonify({'error': 'Resource Not found'}), 404)
 
-@app.route(env_props.get('api_context') + '/analyze', methods = ['POST'])
+@app.route(api_context + '/analyze', methods = ['POST'])
 def sentimentIdentifyer():
     if request.method == 'POST':
         #TODO
@@ -23,3 +25,4 @@ def not_found(error):
 
 if __name__ == "__main__":
     app.run(debug=True)
+

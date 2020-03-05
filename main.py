@@ -13,7 +13,7 @@ api_context = env_props.get('api_context')
 
 @app.route(api_context)
 def home():
-    return make_response(jsonify({'error': 'Helath Check Up'}), 200)
+    return make_response(jsonify({'success': 'Helath Check Up'}), 200)
 
 @app.route(api_context + '/analyze', methods = ['POST'])
 def analyze():
@@ -31,7 +31,7 @@ def analyze():
                     return make_response(jsonify({'error': 'URL sent was not valid'}), 400)
                 else:
                     result = SentimentAnalyzer.sentiment_analyze_invoke(url)
-                    return make_response(jsonify({'result': result}), 200)
+                    return make_response(jsonify({'success': result}), 200)
     
 @app.errorhandler(404)
 def not_found(error):

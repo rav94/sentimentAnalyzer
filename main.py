@@ -19,19 +19,32 @@ def home():
 def analyze():
     if request.method == 'POST':
         print(request.data);
+
         data = json.loads(request.data)
+
         if "" in data:
             return make_response(jsonify({'error': 'Your request is empty, please send a valid request'}), 400)
         else:
             url = data.get("url", None)
+
             if url is None:
                 return make_response(jsonify({'error': 'URL parameter not available. check your request'}), 400)
+
             else:
                 if not validators.url(url):
                     return make_response(jsonify({'error': 'URL sent was not valid'}), 400)
+
                 else:
-                    result = SentimentAnalyzer.sentiment_analyze_invoke(url)
-                    return make_response(jsonify({'success': result}), 200)
+                    result = SentimentAnalyzer(url).sentiment_analyze_invoke()
+
+                    if (result["status"] and result["sentiment"]):
+                        return make_response(jsonify({'status': True, 'details': 'Succesfully Analyzed', 'result': result["sentiment"]}), 200)
+                    
+                    else:
+                        if (result["error"]):
+                            return make_response(jsonify({'status': False, 'details': 'Internal Error Occured', 'error': result["error"]}), 500)
+                        else:
+                            return make_response(jsonify({'status': False, 'details': 'Internal Error Occured', 'error': "N/A"}), 500)
     
 @app.errorhandler(404)
 def not_found(error):

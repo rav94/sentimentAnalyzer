@@ -16,6 +16,8 @@ Audio Sentiment Analyzer with AWS Transcribe/ Comprehend - Exposed as a Flask RE
 
     sudo env/bin/pip3.7 install boto3
 
+    sudo env/bin/pip3.7 install validators
+
 3 - Run app
 
     source env/bin/activate

@@ -2,10 +2,12 @@ import os.path
 import json
 import validators
 from flask import Flask, render_template, request, jsonify, make_response
+from flask_cors import CORS, cross_origin
 from SentimentAnalyzer import SentimentAnalyzer
 from PropertyReader import PropertyReader
 
 app = Flask(__name__)
+cors = CORS(app)
 
 env_props = PropertyReader().read_properties_file()
 
@@ -15,6 +17,7 @@ api_context = env_props.get('api_context')
 def home():
     return make_response(jsonify({'success': 'Helath Check Up'}), 200)
 
+@cross_origin()
 @app.route(api_context + '/analyze', methods = ['POST'])
 def analyze():
     if request.method == 'POST':

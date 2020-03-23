@@ -18,6 +18,8 @@ Audio Sentiment Analyzer with AWS Transcribe/ Comprehend - Exposed as a Flask RE
 
     sudo env/bin/pip3.7 install validators
 
+    sudo env/bin/pip3.7 install flask_cors
+
 3 - Run app
 
     source env/bin/activate

@@ -6,7 +6,8 @@ RUN \
     python3 -m pip install pip && \
     pip3 install flask && \
     pip3 install boto3 && \
-    pip3 install validators
+    pip3 install validators && \
+    pip3 install flask-cors
 
 COPY PropertyReader.py \
     SentimentAnalyzer.py \

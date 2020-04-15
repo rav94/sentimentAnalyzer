@@ -28,7 +28,9 @@ Audio Sentiment Analyzer with AWS Transcribe/ Comprehend - Exposed as a Flask RE
 
 4 - Docker-based deployment
 
-    docker run -p 5000:5000 ravnf94/sentimentanalyzer:latest
+    docker build --tag sentimentAnalyzer:latest .
+    
+    docker run -p 5000:5000 sentimentAnalyzer:latest
 
 ## Inspired By
 
